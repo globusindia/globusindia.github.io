@@ -49,7 +49,6 @@ h2:hover, h3:hover, h4:hover{transition: 0.3s;}
 .my-card-flex {  flex-direction: column; justify-content: space-around;}
 .my-text-overflow { overflow: hidden; text-overflow: ellipsis;}
 .my-transition { transition: 0.5s;}
-.my-pointer { cursor: url('../images/mouse-solid.png'), pointer;}
 .my-hover-greyscale-off:hover {filter: none;}
 /* ADDITIONAL STYLING FOR ELEMENTS */
 #header {
