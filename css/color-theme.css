@@ -1,0 +1,21 @@
+.my-mango, .my-hover-mango:hover { color:white!important; background-color: #ffbe0bff!important;}
+.my-orange-pantone, .my-hover-orange-pantone:hover { color:white!important; background-color: #f7484e!important;}
+.my-winter-sky, .my-hover-winter-sky:hover { color:white!important; background-color: #ff006eff!important;}
+.my-blue-violet, .my-hover-blue-violet:hover { color:white!important; background-color: #8338ecff!important;}
+.my-azure, .my-hover-azure:hover { color:white!important; background-color: #3a86ffff!important;}
+.my-footer { color: white; background-color: #292929;}
+
+.my-text-mango, .my-hover-text-mango:hover{ color: #ffbe0bff!important; }
+.my-text-orange-pantone, .my-hover-text-orange-pantone:hover{ color: #f7484e!important;}
+.my-text-winter-sky, .my-hover-text-winter-sky:hover{ color: #ff006eff!important;}
+.my-text-blue-violet, .my-hover-text-blue-violet:hover{ color: #8338ecff!important;}
+.my-text-azure, .my-hover-text-azure:hover{ color: #3a86ffff!important;}
+
+.my-hover-border-mango:hover { border-color: #ffbe0bff!important;}
+.my-hover-border-orange-pantone:hover { border-color: #f7484e!important;}
+.my-hover-border-winter-sky:hover { border-color: hsl(334, 100%, 50%)!important;}
+.my-hover-border-blue-violet:hover { border-color: #8338ecff!important;}
+.my-hover-border-azure:hover { border-color: #3a86ffff!important;}
+
+.my-gradient{ color: white!important; background: linear-gradient(0deg, #ffbe0bff, #fb5607ff, #ff006eff, #8338ecff, #3a86ffff)!important;}
+
