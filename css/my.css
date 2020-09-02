@@ -112,13 +112,3 @@ h2:hover, h3:hover, h4:hover{transition: 0.3s;}
         padding-top: 20vh;
     }
 }
-
-
-/* lazy loading images classes*/
-.bgimgapp1 {
-  background: url(images/product1.jpeg) 50% 50% no-repeat;
-  background-size: cover;
-}
-.bgimgapp1.replace {
-  background-img: url(images/lazy/product1.jpeg);
-}
