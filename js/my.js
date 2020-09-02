@@ -1,22 +1,3 @@
-window.onscroll = function() {scrollFunction()};
-function scrollFunction() {
-  if (document.body.scrollTop > 70 || document.documentElement.scrollTop > 70) {
-    document.getElementById("header").style.fontSize = "18px";
-    document.getElementById("logo").style.maxHeight = "6vh";
-    document.getElementById("header").style.fontWeight = "180";
-    document.getElementById("header").classList.add("w3-white");
-    document.getElementById("header").classList.add("w3-card");
-    document.getElementById("header-mobile").classList.add("w3-card");
-    
-  } else {
-    document.getElementById("header").style.fontSize = "22px";
-    document.getElementById("logo").style.maxHeight = "7vh";
-    document.getElementById("header").style.fontWeight = "350";
-    document.getElementById("header").classList.remove("w3-white");
-    document.getElementById("header").classList.remove("w3-card");
-    document.getElementById("header-mobile").classList.remove("w3-card");
-  }
-}
 function openNav() {
   document.getElementById("myNav").style.height = "100%";
 }
@@ -45,7 +26,7 @@ function openImg(imgName) {
 }
 
 function removeColor() {
-  document.getElementById('header-mobile').classList.remove('w3-transparent','my-blue-violet','my-orange-pantone','my-winter-sky','my-footer','my-azure');
+  $('#header-mobile').removeClass('w3-transparent my-blue-violet my-orange-pantone my-winter-sky my-footer my-azure w3-white');
 }
 
 
@@ -63,11 +44,25 @@ inside that region not below it that is not in purple region, for this the if
 condition block is used. This condition will also recolor the link when we
 scroll towards top from purple (below) to orange (same colored) region */
 
-if( $(window).scrollTop()+$('#header-mobile').height()>=about.top &&
-   $(window).scrollTop()+$('#header-mobile').height()<product.top )
+if ($(window).scrollTop()>=70 && 
+   $(window).scrollTop()<about.top) {
+  removeColor();
+  $("#header").css({"fontSize":"18px", "fontWeight":"180",}).addClass("w3-white w3-card");
+  $("#logo").css("maxHeight","6vh");
+  $("#header-mobile").addClass("w3-white w3-card");
+  } 
+else if($(window).scrollTop()<70) {
+  removeColor();
+  $("#header").css({"fontSize":"22px", "fontWeight":"350"}).removeClass("w3-card").addClass("w3-transparent");
+  $("#logo").css("maxHeight","7vh");
+  $("#header-mobile").removeClass("w3-card").addClass("w3-transparent");
+}
+
+else if($(window).scrollTop() + $("#header-mobile").height() >= about.top &&
+   $(window).scrollTop() + $("#header-mobile").height() < product.top )
 {
     removeColor();
-    document.getElementById('header-mobile').classList.add('my-orange-pantone');
+    $('#header-mobile').addClass('my-orange-pantone');
 }
 
 /*we scroll back from same colored region towards top that is from orange to
@@ -76,7 +71,7 @@ lightgreen region*/
 else if($(window).scrollTop()<about.top)
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('w3-transparent');
+  $('#header-mobile').addClass('w3-transparent');
 }
 
 /* we scroll below the same colored region that is links are to be recolored 
@@ -86,51 +81,51 @@ else if($(window).scrollTop()+$('#header-mobile').height()>=product.top &&
 $(window).scrollTop()+$('#header-mobile').height()<application.top )
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-blue-violet');     
+  $('#header-mobile').addClass('my-blue-violet');
 }
 
 else if($(window).scrollTop()<product.top)
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-orange-pantone');
+  $('#header-mobile').addClass('my-orange-pantone');
 }
 
 else if($(window).scrollTop()+$('#header-mobile').height()>=application.top &&
 $(window).scrollTop()+$('#header-mobile').height()<customer.top )
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-azure');     
+  $('#header-mobile').addClass('my-azure');     
 }
 
 else if($(window).scrollTop()<application.top)
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-blue-violet');
+  $('#header-mobile').addClass('my-blue-violet');
 }
 
 else if($(window).scrollTop()+$('#header-mobile').height()>=customer.top &&
 $(window).scrollTop()+$('#header-mobile').height()<contact.top )
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-winter-sky');     
+  $('#header-mobile').addClass('my-winter-sky');     
 }
 
 else if($(window).scrollTop()<customer.top)
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-azure');
+  $('#header-mobile').addClass('my-azure');
 }
 
 else if($(window).scrollTop()+$('#header-mobile').height()>=contact.top)
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-footer');     
+  $('#header-mobile').addClass('my-footer');     
 }
 
 else if($(window).scrollTop()<contact.top)
 {
   removeColor();
-  document.getElementById('header-mobile').classList.add('my-winter-sky');
+  $('#header-mobile').addClass('my-winter-sky');
 }
 
 });
