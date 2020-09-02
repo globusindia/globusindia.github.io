@@ -28,6 +28,7 @@
     <link rel="stylesheet" href="css/color-theme.css">
     <script src="https://kit.fontawesome.com/878acceb65.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Tangerine">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.css">
     <style>
         .w3-tangerine {
           font-family: "Tangerine", serif;
@@ -64,7 +65,9 @@
 
     <div class="w3-row" id="home">
         <div class="w3-half my-center my-responsive-height">
-            <img src="images/7.jpeg" alt="flower" style="width: 90%;">
+            <a href="images/7.jpeg" class="progressive replace" style="width: 90%">
+                <img src="images/lazy/lazy7.jpeg" class="preview" alt="image" />
+            </a>
         </div>
         <div class="w3-half w3-padding my-responsive-text-align">
             <h2 class="w3-tangerine">inspired by nature</h2>
@@ -946,6 +949,7 @@
       </div>
     </div>
 
+    <script src="https://cdn.jsdelivr.net/npm/progressive-image.js/dist/progressive-image.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/my.js"></script>
 </body>
