@@ -63,55 +63,7 @@
 </head>
 
 <body>
-  <button id="sign-in-button" style="z-index: 100;"></button>
-  <input type="number" id="code" placeholder="XXXX" style="z-index: 103;">
-  <button type="submit" id="verify" onclick="verify()" style="z-index: 102;">Verify</button>
-  <button type="submit" onclick="onSignInSubmit()" style="z-index: 101;">send</button>
-
-
-  <script>
-
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-      'size': 'invisible',
-      'callback': (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        console.log("capcha solved");
-        onSignInSubmit();
-      }
-    });
-
-    function onSignInSubmit() {
-      const appVerifier = window.recaptchaVerifier;
-      firebase.auth().signInWithPhoneNumber("+919911667133", appVerifier)
-        .then((confirmationResult) => {
-          // SMS sent. Prompt user to type the code from the message, then sign the
-          // user in with confirmationResult.confirm(code).
-          console.log("confirmation" + confirmationResult);
-          // ...
-        }).catch((error) => {
-          // Error; SMS not sent
-          console.error(error);
-        });
-    }
-
-
-
-    function verify() {
-      const code = document.getElementById("code").value;
-      confirmationResult.confirm(code).then((result) => {
-        // User signed in successfully.
-        const user = result.user;
-        console.log("result " + result + ", user: " + user);
-      }).catch((error) => {
-        // User couldn't sign in (bad verification code?)
-        console.error(error);
-      });
-    }
-
-        // var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
-
-        // firebase.auth().signInWithCredential(credential);
-  </script>
+  
   <div class="w3-bar w3-top w3-hide-medium w3-hide-small my-text-large my-text-bold" id="header">
     <a href="#home" class="w3-bar-item "><img src="images/logo.png" alt="Logo" id="logo"></a>
     <div class="w3-right w3-padding">
@@ -173,6 +125,55 @@
                 <img src="images/imgResize/smallImages/7.jpeg" class="preview" alt="image" />
             </a>-->
     </div>
+    <button id="sign-in-button" style="z-index: 100;"></button>
+  <input type="number" id="code" placeholder="XXXX" style="z-index: 103;">
+  <button type="submit" id="verify" onclick="verify()" style="z-index: 102;">Verify</button>
+  <button type="submit" onclick="onSignInSubmit()" style="z-index: 101;">send</button>
+
+
+  <script>
+
+    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
+      'size': 'invisible',
+      'callback': (response) => {
+        // reCAPTCHA solved, allow signInWithPhoneNumber.
+        console.log("capcha solved");
+        onSignInSubmit();
+      }
+    });
+
+    function onSignInSubmit() {
+      const appVerifier = window.recaptchaVerifier;
+      firebase.auth().signInWithPhoneNumber("+919911667133", appVerifier)
+        .then((confirmationResult) => {
+          // SMS sent. Prompt user to type the code from the message, then sign the
+          // user in with confirmationResult.confirm(code).
+          console.log("confirmation" + confirmationResult);
+          // ...
+        }).catch((error) => {
+          // Error; SMS not sent
+          console.error(error);
+        });
+    }
+
+
+
+    function verify() {
+      const code = document.getElementById("code").value;
+      confirmationResult.confirm(code).then((result) => {
+        // User signed in successfully.
+        const user = result.user;
+        console.log("result " + result + ", user: " + user);
+      }).catch((error) => {
+        // User couldn't sign in (bad verification code?)
+        console.error(error);
+      });
+    }
+
+        // var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
+
+        // firebase.auth().signInWithCredential(credential);
+  </script>
     <div class="w3-half w3-padding my-responsive-text-align">
       <h2 class="w3-tangerine">inspired by nature</h2>
       <img src="images/text.png" alt="colors" style="max-width: 80%;">
