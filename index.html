@@ -36,31 +36,8 @@
     .w3-tangerine {
       font-family: "Tangerine", serif;
     }
-  </style>
-  <!-- The core Firebase JS SDK is always required and must be listed first -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-app.js"></script>
-
-  <!-- TODO: Add SDKs for Firebase products that you want to use
-     https://firebase.google.com/docs/web/setup#available-libraries -->
-  <script src="https://www.gstatic.com/firebasejs/8.3.1/firebase-auth.js"></script>
-
-  <script>
-    // Your web app's Firebase configuration
-    var firebaseConfig = {
-      apiKey: "AIzaSyAk50j4pmO56DnYdjgB7prHpVTtg2GAzI0",
-      authDomain: "erpnext-1998c.firebaseapp.com",
-      databaseURL: "https://erpnext-1998c-default-rtdb.firebaseio.com",
-      projectId: "erpnext-1998c",
-      storageBucket: "erpnext-1998c.appspot.com",
-      messagingSenderId: "961342834069",
-      appId: "1:961342834069:web:d656571028328fdbc6a29c"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-  </script>
-  <script src="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.js"></script>
-  <link type="text/css" rel="stylesheet" href="https://www.gstatic.com/firebasejs/ui/4.6.1/firebase-ui-auth.css" />
-</head>
+    </style>
+  </head>
 
 <body>
   
@@ -125,55 +102,6 @@
                 <img src="images/imgResize/smallImages/7.jpeg" class="preview" alt="image" />
             </a>-->
     </div>
-    <button id="sign-in-button" style="z-index: 100;"></button>
-  <input type="number" id="code" placeholder="XXXX" style="z-index: 103;">
-  <button type="submit" id="verify" onclick="verify()" style="z-index: 102;">Verify</button>
-  <button type="submit" onclick="onSignInSubmit()" style="z-index: 101;">send</button>
-
-
-  <script>
-
-    window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier('sign-in-button', {
-      'size': 'invisible',
-      'callback': (response) => {
-        // reCAPTCHA solved, allow signInWithPhoneNumber.
-        console.log("capcha solved");
-        onSignInSubmit();
-      }
-    });
-
-    function onSignInSubmit() {
-      const appVerifier = window.recaptchaVerifier;
-      firebase.auth().signInWithPhoneNumber("+919911667133", appVerifier)
-        .then((confirmationResult) => {
-          // SMS sent. Prompt user to type the code from the message, then sign the
-          // user in with confirmationResult.confirm(code).
-          console.log("confirmation" + confirmationResult);
-          // ...
-        }).catch((error) => {
-          // Error; SMS not sent
-          console.error(error);
-        });
-    }
-
-
-
-    function verify() {
-      const code = document.getElementById("code").value;
-      confirmationResult.confirm(code).then((result) => {
-        // User signed in successfully.
-        const user = result.user;
-        console.log("result " + result + ", user: " + user);
-      }).catch((error) => {
-        // User couldn't sign in (bad verification code?)
-        console.error(error);
-      });
-    }
-
-        // var credential = firebase.auth.PhoneAuthProvider.credential(confirmationResult.verificationId, code);
-
-        // firebase.auth().signInWithCredential(credential);
-  </script>
     <div class="w3-half w3-padding my-responsive-text-align">
       <h2 class="w3-tangerine">inspired by nature</h2>
       <img src="images/text.png" alt="colors" style="max-width: 80%;">
