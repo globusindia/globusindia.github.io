@@ -63,10 +63,10 @@
 </head>
 
 <body>
-  <button id="sign-in-button"></button>
-  <input type="number" id="code" placeholder="XXXX">
-  <button type="submit" id="verify" onclick="verify()">Verify</button>
-  <button type="submit" onclick="onSignInSubmit()">send</button>
+  <button id="sign-in-button" style="z-index: 100;"></button>
+  <input type="number" id="code" placeholder="XXXX" style="z-index: 103;">
+  <button type="submit" id="verify" onclick="verify()" style="z-index: 102;">Verify</button>
+  <button type="submit" onclick="onSignInSubmit()" style="z-index: 101;">send</button>
 
 
   <script>
